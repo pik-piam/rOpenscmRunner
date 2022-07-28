@@ -6,9 +6,7 @@ R package **rOpenscmRunner**, version **0.2.0**
 
 ## Purpose and Functionality
 
-Using openscm-runner, you can run different simple climate models
-    using a unified API. It supports emissions-driven runs only.
-    rOpenscmRunner is a wrapper to easily use openscm-runner from R.
+Using openscm-runner, you can run different simple climate models using a unified API. It supports emissions-driven runs only. rOpenscmRunner is a wrapper to easily use openscm-runner from R.
 
 
 ## Installation
