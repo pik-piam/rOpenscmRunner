@@ -1,7 +1,7 @@
 {
   "title": "rOpenscmRunner: Run different simple climate models from R using a unified interface",
   "version": "0.2.0",
-  "description": "<p>Using openscm-runner, you can run different simple climte models\n    using a unified API. It supports emissions-driven runs only.\n    rOpenscmRunner is a wrapper to easily use openscm-runner from R.<\/p>",
+  "description": "<p>Using openscm-runner, you can run different simple climate models\n    using a unified API. It supports emissions-driven runs only.\n    rOpenscmRunner is a wrapper to easily use openscm-runner from R.<\/p>",
   "creators": [
     {
       "name": "Pflüger, Mika"

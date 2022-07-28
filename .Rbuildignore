@@ -5,3 +5,4 @@
 ^tests/.lintr$
 ^codecov\.yml$
 ^.*\.zenodo.json$
+^\.github$
