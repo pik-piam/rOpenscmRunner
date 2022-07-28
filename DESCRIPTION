@@ -5,9 +5,7 @@ Version: 0.2.0
 Date: 2022-07-28
 Authors@R:
     person("Mika", "Pflüger", , "mika.pflueger@pik-potsdam.de", role = c("aut", "cre"))
-Description: Using openscm-runner, you can run different simple climate models
-    using a unified API. It supports emissions-driven runs only.
-    rOpenscmRunner is a wrapper to easily use openscm-runner from R.
+Description: Using openscm-runner, you can run different simple climate models using a unified API. It supports emissions-driven runs only. rOpenscmRunner is a wrapper to easily use openscm-runner from R.
 License: LGPL-3
 URL: https://github.com/pik-piam/rOpenscmRunner
 Suggests:
