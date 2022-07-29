@@ -8,6 +8,8 @@ Authors@R:
 Description: Using openscm-runner, you can run different simple climate models using a unified API. It supports emissions-driven runs only. rOpenscmRunner is a wrapper to easily use openscm-runner from R.
 License: BSD_3_clause + file LICENSE
 URL: https://github.com/pik-piam/rOpenscmRunner
+Depends:
+    reticulate
 Suggests:
     covr,
     testthat
