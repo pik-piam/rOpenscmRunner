@@ -36,7 +36,7 @@ run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface
   sr <- scmdata$ScmRun(scenarios)
 
   rawResult <- openscmRunner$run(
-    climate_models_configs = climateModelsConfigs,
+    climate_models_cfgs = climateModelsConfigs,
     scenarios = sr,
     output_variables = outputVariables,
     out_config = outConfig
