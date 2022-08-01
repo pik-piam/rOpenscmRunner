@@ -17,6 +17,7 @@
 #' @author Mika Pflüger
 #' @importFrom reticulate import
 #' @examples
+#' \dontrun{
 #' run(climateModelsConfigs = list("MAGICC7" = NULL), scenarios = ...)
 #'
 #' run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = ...)
@@ -27,6 +28,7 @@
 #'                                               list("fairsetting" = "noslr"))),
 #'     scenarios = ...,
 #'     outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
+#' }
 #' @export
 run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface Temperature"), outConfig = NULL) {
   openscmRunner <- import("openscm_runner")

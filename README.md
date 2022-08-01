@@ -1,6 +1,6 @@
 # Run different simple climate models from R using a unified interface
 
-R package **rOpenscmRunner**, version **0.2.0**
+R package **rOpenscmRunner**, version **0.3.0**
 
 [![CRAN status](https://www.r-pkg.org/badges/version/rOpenscmRunner)](https://cran.r-project.org/package=rOpenscmRunner)  [![R build status](https://github.com/pik-piam/rOpenscmRunner/workflows/check/badge.svg)](https://github.com/pik-piam/rOpenscmRunner/actions) [![codecov](https://codecov.io/gh/pik-piam/rOpenscmRunner/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/rOpenscmRunner) 
 
@@ -38,7 +38,7 @@ In case of questions / problems please contact Mika Pflüger <mika.pflueger@pik-
 
 To cite package **rOpenscmRunner** in publications use:
 
-Pflüger M (2022). _rOpenscmRunner: Run different simple climate models from R using a unified interface_. R package version 0.2.0, <https://github.com/pik-piam/rOpenscmRunner>.
+Pflüger M (2022). _rOpenscmRunner: Run different simple climate models from R using a unified interface_. R package version 0.3.0, <https://github.com/pik-piam/rOpenscmRunner>.
 
 A BibTeX entry for LaTeX users is
 
@@ -47,7 +47,7 @@ A BibTeX entry for LaTeX users is
   title = {rOpenscmRunner: Run different simple climate models from R using a unified interface},
   author = {Mika Pflüger},
   year = {2022},
-  note = {R package version 0.2.0},
+  note = {R package version 0.3.0},
   url = {https://github.com/pik-piam/rOpenscmRunner},
 }
 ```
