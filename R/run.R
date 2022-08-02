@@ -9,7 +9,10 @@
 #' configuration or list of configurations to use for this model. Use null to denote the default configuration with
 #' no changes. Climate model names supported: CiceroSCM, FaIR, and MAGICC7. The supported configuration settings
 #' depend on the used climate model, please refer to their respective documentation.
-#' @param scenarios DataFrame containing one or multiple emissions scenarios to simulate.
+#' @param scenarios DataFrame containing one or multiple emissions scenarios to simulate. The data shoud be in
+#' IAMC format, i.e. a wide data frame with the years as columns. Index columns that are additionally required are
+#' "model", "scenario", "region", "variable", and "unit". The "variable" must also follow the IAMC format naming
+#' conventions, e.g. "Emissions|CO2" for the 'total CO2 emissions (not including CCS)'.
 #' @param outputVariables A list of variables to include in the output. Optional, default: list("Surface Temperature")
 #' @param outConfig Named list where the names are climate models and the corresponding list member is a list of
 #' configuration values to include in the output in the metadata. Optional, default: don't include input variables in
@@ -18,15 +21,31 @@
 #' @importFrom reticulate import
 #' @examples
 #' \dontrun{
-#' run(climateModelsConfigs = list("MAGICC7" = NULL), scenarios = ...)
+#' # create very minimal emissions scenario.
+#' df <- data.frame(
+#'  model = c("rand", "rand"),
+#'  scenario = c("weirdEMI", "weirdEMI"),
+#'  region = c("World", "World"),
+#'  variable = c("Emissions|CO2", "Emissions|CH4"),
+#'  unit = c("Mt CO2 / yr", "Mt CH4 / yr"),
+#'  "2015" = c(9., 12.),
+#'  "2020" = c(10., 11.),
+#'  check.names = FALSE)
 #'
-#' run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = ...)
+#' # simulate the scenario using MAGICC7 with default settings.
+#' run(climateModelsConfigs = list("MAGICC7" = NULL), scenarios = df)
 #'
+#' # simulate the scenario using MAGICC7 with default settings but "somesetting" set to "12"
+#' run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = df)
+#'
+#' # simulate the scenario with MAGICC7 and FaIR, each with two different sets of configurations
+#' # where in MAGICC7 we change "somesetting" and in FaIR we change "fairsetting".
+#' # Also include the changed configuration settings in the output.
 #' run(climateModelsConfigs = list("MAGICC7" = list(list("somesetting" = "12"),
 #'                                                  list("somesetting" = "13")),
 #'                                 "FaIR" = list(list("fairsetting" = "slr"),
 #'                                               list("fairsetting" = "noslr"))),
-#'     scenarios = ...,
+#'     scenarios = df,
 #'     outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
 #' }
 #' @export
