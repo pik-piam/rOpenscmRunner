@@ -17,8 +17,12 @@
 #' @param outConfig Named list where the names are climate models and the corresponding list member is a list of
 #' configuration values to include in the output in the metadata. Optional, default: don't include input variables in
 #' the output metadata.
+#' @param returnRaw Boolean to control the return type. By default (returnRaw = FALSE), run() returns a named list
+#' result, where result$df is a data frame which contains the result in the same format as the input scenarios, and
+#' result$metadata is a named list of metadata generated during the run. If returnRaw is TRUE, run() returns a python
+#' scmdata.ScmRun object.
 #' @author Mika Pflüger
-#' @importFrom reticulate import
+#' @importFrom reticulate import py_to_r
 #' @examples
 #' \dontrun{
 #' # create very minimal emissions scenario.
@@ -49,8 +53,9 @@
 #'     outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
 #' }
 #' @export
-run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface Temperature"), outConfig = NULL) {
-  openscmRunner <- import("openscm_runner")
+run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface Temperature"), outConfig = NULL,
+                returnRaw = FALSE) {
+  openscmRunner <- import("openscm_runner", convert = FALSE)
   scmdata <- import("scmdata")
   sr <- scmdata$ScmRun(scenarios)
 
@@ -60,6 +65,10 @@ run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface
     output_variables = outputVariables,
     out_config = outConfig
   )
-
-  return(rawResult)
+  if (returnRaw) {
+    return(rawResult)
+  } else {
+    return(list(df = py_to_r(rawResult$timeseries()$reset_index()),
+                metadata = py_to_r(rawResult$metadata)))
+  }
 }
