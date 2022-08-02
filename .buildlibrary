@@ -1,3 +1,5 @@
 ValidationKey: '576150'
 AutocreateReadme: yes
-allowLinterWarnings: yes
+allowLinterWarnings: no
+AcceptedNotes:
+ - 'Non-standard file/directory found at top level.*requirements.txt'
