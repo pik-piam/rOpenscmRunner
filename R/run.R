@@ -58,6 +58,15 @@ run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface
   openscmRunner <- import("openscm_runner", convert = FALSE)
   scmdata <- import("scmdata")
   sr <- scmdata$ScmRun(scenarios)
+  climateModelsConfigs <- expandConfigs(climateModelsConfigs)
+
+  if (!is.null(outConfig)) {
+    for (model in names(outConfig)) {
+      if (!is.null(outConfig[[model]])) {
+        outConfig[[model]] <- reticulate::tuple(outConfig[[model]])
+      }
+    }
+  }
 
   rawResult <- openscmRunner$run(
     climate_models_cfgs = climateModelsConfigs,
@@ -71,4 +80,27 @@ run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface
     return(list(df = py_to_r(rawResult$timeseries()$reset_index()),
                 metadata = py_to_r(rawResult$metadata)))
   }
+}
+
+expandConfigs <- function(climateModelsConfigs) {
+  emptyNamedList <- list()
+  names(emptyNamedList) <- list()
+
+  for (model in names(climateModelsConfigs)) {
+    # if the configs variable is NULL, assume a single default config
+    if (is.null(climateModelsConfigs[[model]])) {
+      climateModelsConfigs[[model]] <- list(emptyNamedList)
+    }
+    # if the configs variable is a named list, there is only one config, put it into a list
+    if (!is.null(names(climateModelsConfigs[[model]]))) {
+      climateModelsConfigs[[model]] <- list(climateModelsConfigs[[model]])
+    }
+    # replace NULL configs with empty (default) configs
+    for (i in seq_along(climateModelsConfigs[[model]])) {
+      if (is.null(climateModelsConfigs[[model]][[i]])) {
+        climateModelsConfigs[[model]][[i]] <- emptyNamedList
+      }
+    }
+  }
+  return(climateModelsConfigs)
 }
