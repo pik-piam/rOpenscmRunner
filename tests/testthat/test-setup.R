@@ -4,6 +4,9 @@ test_that("setup works for MAGICC", {
   setup(magiccExecutable7 = "./some/path")
   expect_identical(os$environ["MAGICC_EXECUTABLE_7"], "./some/path")
 
+  setup(magiccExecutable7 = "./other/path")
+  expect_identical(os$environ["MAGICC_EXECUTABLE_7"], "./other/path")
+
   setup(magiccWorkerNumber = 4)
   expect_identical(os$environ["MAGICC_WORKER_NUMBER"], "4")
 

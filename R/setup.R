@@ -25,13 +25,14 @@ setup <- function(magiccExecutable7 = NULL, magiccWorkerNumber = NULL, magiccWor
   if (!is.null(magiccExecutable7) || !is.null(magiccWorkerNumber) || !is.null(magiccWorkerRootDir)) {
     os <- import("os")
     if (!is.null(magiccExecutable7)) {
-      os$environ[["MAGICC_EXECUTABLE_7"]] <- magiccExecutable7
+      # need to use __setitem__ because normal assignment doesn't reliably overwrite existing values.
+      os$environ$"__setitem__"("MAGICC_EXECUTABLE_7", magiccExecutable7)
     }
     if (!is.null(magiccWorkerNumber)) {
-      os$environ[["MAGICC_WORKER_NUMBER"]] <- toString(magiccWorkerNumber)
+      os$environ$"__setitem__"("MAGICC_WORKER_NUMBER", toString(magiccWorkerNumber))
     }
     if (!is.null(magiccWorkerRootDir)) {
-      os$environ[["MAGICC_WORKER_ROOT_DIR"]] <- magiccWorkerRootDir
+      os$environ$"__setitem__"("MAGICC_WORKER_ROOT_DIR", magiccWorkerRootDir)
     }
   }
 }

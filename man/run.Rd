@@ -55,20 +55,20 @@ df <- data.frame(
  check.names = FALSE)
 
 # simulate the scenario using MAGICC7 with default settings.
-run(climateModelsConfigs = list("MAGICC7" = NULL), scenarios = df)
+run(climateModelsConfigs = list(MAGICC7 = NULL), scenarios = df)
 
 # simulate the scenario using MAGICC7 with default settings but "somesetting" set to "12"
-run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = df)
+run(climateModelsConfigs = list(MAGICC7 = list(somesetting = "12")), scenarios = df)
 
 # simulate the scenario with MAGICC7 and FaIR, each with two different sets of configurations
 # where in MAGICC7 we change "somesetting" and in FaIR we change "fairsetting".
 # Also include the changed configuration settings in the output.
-run(climateModelsConfigs = list("MAGICC7" = list(list("somesetting" = "12"),
-                                                 list("somesetting" = "13")),
-                                "FaIR" = list(list("fairsetting" = "slr"),
-                                              list("fairsetting" = "noslr"))),
+run(climateModelsConfigs = list(MAGICC7 = list(list(somesetting = "12"),
+                                                 list(somesetting = "13")),
+                                FaIR = list(list(fairsetting = "slr"),
+                                              list(fairsetting = "noslr"))),
     scenarios = df,
-    outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
+    outConfig = list(MAGICC7 = list("somesetting"), FaIR = list("fairsetting")))
 }
 }
 \author{
