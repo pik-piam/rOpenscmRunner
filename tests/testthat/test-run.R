@@ -15,7 +15,7 @@ test_that("run works with a mock model", {
 
   # simulate the scenario using the Mock model
   # returnRaw = TRUE returns a python object
-  res <- run(climateModelsConfigs = list("Mock" = NULL), scenarios = df, returnRaw = TRUE)
+  res <- run(climateModelsConfigs = list(Mock = NULL), scenarios = df, returnRaw = TRUE)
 
   expect_identical(
     data.frame(reticulate::py_to_r(res$meta)),
