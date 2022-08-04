@@ -84,7 +84,7 @@ run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface
 
 expandConfigs <- function(climateModelsConfigs) {
   emptyNamedList <- list()
-  names(emptyNamedList) <- list()
+  names(emptyNamedList) <- character(0)
 
   for (model in names(climateModelsConfigs)) {
     # if the configs variable is NULL, assume a single default config
