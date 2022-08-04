@@ -13,7 +13,7 @@
 #' IAMC format, i.e. a wide data frame with the years as columns. Index columns that are additionally required are
 #' "model", "scenario", "region", "variable", and "unit". The "variable" must also follow the IAMC format naming
 #' conventions, e.g. "Emissions|CO2" for the 'total CO2 emissions (not including CCS)'.
-#' @param outputVariables A list of variables to include in the output. Optional, default: list("Surface Temperature")
+#' @param outputVariables A list of variables to include in the output.
 #' @param outConfig Named list where the names are climate models and the corresponding list member is a list of
 #' configuration values to include in the output in the metadata. Optional, default: don't include input variables in
 #' the output metadata.
