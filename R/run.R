@@ -6,7 +6,7 @@
 #' before attempting to use run.
 #'
 #' @param climateModelsConfigs Named list where the names are climate models and the corresponding list member is a
-#' configuration or list of configurations to use for this model. Use null to denote the default configuration with
+#' configuration or list of configurations to use for this model. Use NULL to denote the default configuration with
 #' no changes. Climate model names supported: CiceroSCM, FaIR, and MAGICC7. The supported configuration settings
 #' depend on the used climate model, please refer to their respective documentation.
 #' @param scenarios DataFrame containing one or multiple emissions scenarios to simulate. The data shoud be in
