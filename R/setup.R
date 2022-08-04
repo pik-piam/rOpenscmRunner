@@ -14,10 +14,12 @@
 #' @param magiccWorkerRootDir The path to a folder where the temporary directories to run MAGICC will be created.
 #' By default, a standard location is chosen depending on your operating system. Instead of using this function to
 #' supply the setting, you can also set the environment variable MAGICC_WORKER_ROOT_DIR before starting your R session.
+#' If you do supply a non-standard directory, you have to create and clean it up yourself. If you use the standard
+#' settings, everything happens automatically.
 #' @author Mika Pflüger
 #' @importFrom reticulate import
 #' @examples
-#' setup("lucode2")
+#' setup(magiccExecutable7 = "/path/to/magicc/bin/magicc", magiccWorkerNumber = 4)
 #' @export
 setup <- function(magiccExecutable7 = NULL, magiccWorkerNumber = NULL, magiccWorkerRootDir = NULL) {
   if (!is.null(magiccExecutable7) || !is.null(magiccWorkerNumber) || !is.null(magiccWorkerRootDir)) {

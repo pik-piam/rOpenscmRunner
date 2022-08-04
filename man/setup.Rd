@@ -21,7 +21,9 @@ you can also set the environment variable MAGICC_WORKER_NUMBER before starting y
 
 \item{magiccWorkerRootDir}{The path to a folder where the temporary directories to run MAGICC will be created.
 By default, a standard location is chosen depending on your operating system. Instead of using this function to
-supply the setting, you can also set the environment variable MAGICC_WORKER_ROOT_DIR before starting your R session.}
+supply the setting, you can also set the environment variable MAGICC_WORKER_ROOT_DIR before starting your R session.
+If you do supply a non-standard directory, you have to create and clean it up yourself. If you use the standard
+settings, everything happens automatically.}
 }
 \description{
 Prepare rOpenscmRunner to run climate models.
@@ -31,7 +33,7 @@ Some simple climate models need certain information to run. This function provid
 interface to supply this information.
 }
 \examples{
-setup("lucode2")
+setup(magiccExecutable7 = "/path/to/magicc/bin/magicc", magiccWorkerNumber = 4)
 }
 \author{
 Mika Pflüger
