@@ -50,7 +50,7 @@
 #'                                 FaIR = list(list(fairsetting = "slr"),
 #'                                               list(fairsetting = "noslr"))),
 #'     scenarios = df,
-#'     outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
+#'     outConfig = list(MAGICC7 = list("somesetting"), FaIR = list("fairsetting")))
 #' }
 #' @export
 run <- function(climateModelsConfigs, scenarios, outputVariables = list("Surface Temperature"), outConfig = NULL,
