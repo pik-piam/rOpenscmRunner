@@ -40,7 +40,7 @@
 #' run(climateModelsConfigs = list(MAGICC7 = NULL), scenarios = df)
 #'
 #' # simulate the scenario using MAGICC7 with default settings but "somesetting" set to "12"
-#' run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = df)
+#' run(climateModelsConfigs = list(MAGICC7 = list(somesetting = "12")), scenarios = df)
 #'
 #' # simulate the scenario with MAGICC7 and FaIR, each with two different sets of configurations
 #' # where in MAGICC7 we change "somesetting" and in FaIR we change "fairsetting".
