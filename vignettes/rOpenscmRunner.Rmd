@@ -62,14 +62,14 @@ it knows where to finde them. However, MAGICC is installed separately, so you ha
 find it using the `rOpenscmRunner::setup` function:
 
 ```{r}
-rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc")
+rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc")  # nolint: absolute_path_linter
 ```
 If you are on windows, you have to give the full path to the `magicc.exe` file in the MAGICC installation in the
 `bin/` folder. On Linux, give the full path to the `magicc` file in the `bin/` folder in the MAGICC installation.
 
 Using the same mechanism, you can also configure other parts of the MAGICC integration, but they are not required:
 ```{r}
-rOpenscmRunner::setup(magiccWorkerNumber = 4, magiccWorkerRootDir = "/path/to/temp/folder")
+rOpenscmRunner::setup(magiccWorkerNumber = 4, magiccWorkerRootDir = "/path/to/temp/folder")  # nolint: absolute_path_linter
 ```
 The default for the number of workers is to use as many workers as there are processors in your system. This should
 be a sensible default on laptops and workstations, but probably needs manual setup on shared machines like compute
