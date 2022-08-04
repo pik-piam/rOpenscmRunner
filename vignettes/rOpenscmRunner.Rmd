@@ -141,7 +141,7 @@ in the tab "Documentation" in the section "Variables" (available after login, gu
 models provide additional non-standard outputs, if you want to request any of those, you have to use the non-standard
 name of the climate model.
 
-It is also possible to run multiple models at once. Expanding on the sea level rise example, we could als add
+It is also possible to run multiple models at once. Expanding on the sea level rise example, we could also add
 a run of FaIR in the default configuration:
 ```r
 # output sea level rise and surface temperature for two different climate
