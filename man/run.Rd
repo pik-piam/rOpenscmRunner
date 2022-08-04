@@ -14,7 +14,7 @@ run(
 }
 \arguments{
 \item{climateModelsConfigs}{Named list where the names are climate models and the corresponding list member is a
-configuration or list of configurations to use for this model. Use null to denote the default configuration with
+configuration or list of configurations to use for this model. Use NULL to denote the default configuration with
 no changes. Climate model names supported: CiceroSCM, FaIR, and MAGICC7. The supported configuration settings
 depend on the used climate model, please refer to their respective documentation.}
 
@@ -23,7 +23,7 @@ IAMC format, i.e. a wide data frame with the years as columns. Index columns tha
 "model", "scenario", "region", "variable", and "unit". The "variable" must also follow the IAMC format naming
 conventions, e.g. "Emissions|CO2" for the 'total CO2 emissions (not including CCS)'.}
 
-\item{outputVariables}{A list of variables to include in the output. Optional, default: list("Surface Temperature")}
+\item{outputVariables}{A list of variables to include in the output.}
 
 \item{outConfig}{Named list where the names are climate models and the corresponding list member is a list of
 configuration values to include in the output in the metadata. Optional, default: don't include input variables in

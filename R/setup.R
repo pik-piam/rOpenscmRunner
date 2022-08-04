@@ -28,10 +28,10 @@ setup <- function(magiccExecutable7 = NULL, magiccWorkerNumber = NULL, magiccWor
       os$environ[["MAGICC_EXECUTABLE_7"]] <- magiccExecutable7
     }
     if (!is.null(magiccWorkerNumber)) {
-      os$environ$"__setitem__"("MAGICC_WORKER_NUMBER", toString(magiccWorkerNumber))
+      os$environ[["MAGICC_WORKER_NUMBER"]] <- toString(magiccWorkerNumber)
     }
     if (!is.null(magiccWorkerRootDir)) {
-      os$environ$"__setitem__"("MAGICC_WORKER_ROOT_DIR", magiccWorkerRootDir)
+      os$environ[["MAGICC_WORKER_ROOT_DIR"]] <- magiccWorkerRootDir
     }
   }
 }
