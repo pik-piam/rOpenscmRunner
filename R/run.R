@@ -48,7 +48,7 @@
 #' run(climateModelsConfigs = list(MAGICC7 = list(list(somesetting = "12"),
 #'                                                  list(somesetting = "13")),
 #'                                 FaIR = list(list(fairsetting = "slr"),
-#'                                               list("fairsetting" = "noslr"))),
+#'                                               list(fairsetting = "noslr"))),
 #'     scenarios = df,
 #'     outConfig = list("MAGICC7" = list("somesetting"), "FaIR" = list("fairsetting")))
 #' }
