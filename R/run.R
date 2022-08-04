@@ -37,7 +37,7 @@
 #'  check.names = FALSE)
 #'
 #' # simulate the scenario using MAGICC7 with default settings.
-#' run(climateModelsConfigs = list("MAGICC7" = NULL), scenarios = df)
+#' run(climateModelsConfigs = list(MAGICC7 = NULL), scenarios = df)
 #'
 #' # simulate the scenario using MAGICC7 with default settings but "somesetting" set to "12"
 #' run(climateModelsConfigs = list("MAGICC7" = list("somesetting" = "12")), scenarios = df)
