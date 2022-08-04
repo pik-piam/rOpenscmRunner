@@ -86,7 +86,7 @@ variables, check the documentation of `rOpenscmRunner::setup()` for details.
 
 To run simple climate model(s), use the `rOpenscmRunner::run()` function. It takes the emission scenario(s) as a
 `data.frame` in a format like the IAMC format for scenarios. In particular, it is a `data.frame` where each row is
-a time series and the columns are `model` for the model that produced the emissions scenario, `scenario` for a moniker
+a time series and the columns are `model` for the model that produced the emissions scenario, `scenario` for a name
 of the scenario, `region` for the area (most likely, `World` for simple climate models), and `variable` and
 `unit` to specify what is in the timeseries. The remaining columns are the time points, most likely years.
 An example for a very short and incomplete emissions scenario would be:
