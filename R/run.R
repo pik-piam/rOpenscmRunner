@@ -45,7 +45,7 @@
 #' # simulate the scenario with MAGICC7 and FaIR, each with two different sets of configurations
 #' # where in MAGICC7 we change "somesetting" and in FaIR we change "fairsetting".
 #' # Also include the changed configuration settings in the output.
-#' run(climateModelsConfigs = list("MAGICC7" = list(list("somesetting" = "12"),
+#' run(climateModelsConfigs = list(MAGICC7 = list(list(somesetting = "12"),
 #'                                                  list("somesetting" = "13")),
 #'                                 "FaIR" = list(list("fairsetting" = "slr"),
 #'                                               list("fairsetting" = "noslr"))),
