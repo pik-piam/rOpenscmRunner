@@ -30,7 +30,7 @@ test_that("run works with a mock model", {
   )
 
   # normal return an R named list
-  res <- run(climateModelsConfigs = list("Mock" = NULL), scenarios = df)
+  res <- run(climateModelsConfigs = list(Mock = NULL), scenarios = df)
 
   emptyNamedList <- list()
   names(emptyNamedList) <- list()
