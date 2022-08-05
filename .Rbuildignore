@@ -6,3 +6,6 @@
 ^codecov\.yml$
 ^.*\.zenodo.json$
 ^\.github$
+^\.idea$
+^requirements\.txt$
+^vignettes/.lintr$
