@@ -45,11 +45,17 @@ install.packages("rOpenscmRunner")
 Additionally, you will need a Python installation and the `openscm-runner` Python package installed, as well as some
 climate models. If you don't have a Python installation so far, you can find one at
 [anaconda](https://www.anaconda.com/products/distribution). Use the package management of your Python distribution
-to install `openscm-runner` with all dependencies for the models. If you use `pip`, run from the command line:
+to install `openscm-runner`. You can then specify which simple climate models you want to also install.
+If you use `pip`, choose what you need and run from the command line:
 
 ```bash
-$ pip install --user openscm-runner[models]
+$ pip install --user openscm-runner[fair]  # openscm-runner and everything needed to run the model FaIR
+$ pip install --user openscm-runner[magicc]  # openscm-runner and everything needed to integrate with the model MAGICC
+$ pip install --user openscm-runner[models]  # openscm-runner and all available models
 ```
+
+If you are using `conda` instead of `pip`, or want to know further details about the installation, check the
+[openscm-runner installation documentation](https://openscm-runner.readthedocs.io/en/latest/installation.html).
 
 If you want to run the MAGICC model, you also have to install it. Download the most recent version from
 [magicc.org](https://magicc.org/download/magicc7). Extract it to a location suitable to you, and copy the default
@@ -58,25 +64,30 @@ configuration from the `run/defaults/` folder into the `run/` folder.
 ## Setup
 
 FaIR and Cicero-SCM are installed via the Python package management or included in `openscm-runner`, so
-it knows where to finde them. However, MAGICC is installed separately, so you have to tell `rOpenscmRunner` where to
-find it using the `rOpenscmRunner::setup` function:
+it knows where to find them. However, MAGICC is installed separately, so you have to tell `rOpenscmRunner` where to
+find it using the `rOpenscmRunner::setup` function. Additionally, you have to also provide a path to a folder where
+MAGICC can store temporary files:
 
 ```{r}
-rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc")  # nolint: absolute_path_linter
+rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc",
+                      magiccWorkerRootDir = "/path/to/temp/folder")  # nolint: absolute_path_linter
 ```
 If you are on windows, you have to give the full path to the `magicc.exe` file in the MAGICC installation in the
 `bin/` folder. On Linux, give the full path to the `magicc` file in the `bin/` folder in the MAGICC installation.
+The temporary folder must not be inside the `magicc` folder where the `magiccExecutable7` is. You can simply use
+R's standard temporary folder like this:
+
+```r
+rOpenscmRunner::setup(magiccWorkerRootDir = tempdir())
+```
 
 Using the same mechanism, you can also configure other parts of the MAGICC integration, but they are not required:
 ```{r}
-rOpenscmRunner::setup(magiccWorkerNumber = 4, magiccWorkerRootDir = "/path/to/temp/folder")  # nolint: absolute_path_linter
+rOpenscmRunner::setup(magiccWorkerNumber = 4)
 ```
 The default for the number of workers is to use as many workers as there are processors in your system. This should
 be a sensible default on laptops and workstations, but probably needs manual setup on shared machines like compute
 clusters.
-The default for the temporary folder is to use your system's default temporary folder location. You might want to
-specify another temporary folder here, for example to take advantage of a fast in-memory file system. Note however
-that you are responsible to create and clean up the temporary folder yourself if you do specify one.
 
 All settings supplied via `rOpenscmRunner::setup()` are remembered for the duration of your current R session. If you
 don't want to call `rOpenscmRunner::setup()` in each session, you can also supply these settings via environment
@@ -135,8 +146,9 @@ res <- rOpenscmRunner::run(
 ```
 
 The available configuration settings depend on the climate model and have to be looked up in the respective
-documentation. The names of `outputVariables` is standardized for the most common output variables by
-`openscm-runner` according to the names used in the [SR15 database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer)
+documentation. The names of `outputVariables` are standardized for the most common output variables by
+`openscm-runner` according to the names used in the [Special Report: Global Warming of 1,5°](https://www.ipcc.ch/sr15/).
+You can find them all in the [SR15 database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer)
 in the tab "Documentation" in the section "Variables" (available after login, guest login works). Some climate
 models provide additional non-standard outputs, if you want to request any of those, you have to use the non-standard
 name of the climate model.
