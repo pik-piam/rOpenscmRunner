@@ -69,7 +69,7 @@ find it using the `rOpenscmRunner::setup` function. Additionally, you have to al
 MAGICC can store temporary files:
 
 ```{r}
-rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc",
+rOpenscmRunner::setup(magiccExecutable7 = "/path/to/magicc/bin/magicc",  # nolint: absolute_path_linter
                       magiccWorkerRootDir = "/path/to/temp/folder")  # nolint: absolute_path_linter
 ```
 If you are on windows, you have to give the full path to the `magicc.exe` file in the MAGICC installation in the
