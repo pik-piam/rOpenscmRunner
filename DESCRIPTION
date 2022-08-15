@@ -1,8 +1,8 @@
 Type: Package
 Package: rOpenscmRunner
 Title: Run different simple climate models from R using a unified interface
-Version: 0.3.0
-Date: 2022-08-04
+Version: 0.3.1
+Date: 2022-08-11
 Authors@R:
     person("Mika", "Pflüger", , "mika.pflueger@pik-potsdam.de", role = c("aut", "cre"))
 Description: Using openscm-runner, you can run different simple climate models using a unified API. It supports emissions-driven runs only. rOpenscmRunner is a wrapper to easily use openscm-runner from R.

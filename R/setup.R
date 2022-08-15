@@ -12,10 +12,8 @@
 #' processes are started as there are processors in your system. Instead of using this function to supply the setting,
 #' you can also set the environment variable MAGICC_WORKER_NUMBER before starting your R session.
 #' @param magiccWorkerRootDir The path to a folder where the temporary directories to run MAGICC will be created.
-#' By default, a standard location is chosen depending on your operating system. Instead of using this function to
-#' supply the setting, you can also set the environment variable MAGICC_WORKER_ROOT_DIR before starting your R session.
-#' If you do supply a non-standard directory, you have to create and clean it up yourself. If you use the standard
-#' settings, everything happens automatically.
+#' Needs to be provided for MAGICC to work. Instead of using this function to supply the setting, you can also set the
+#' environment variable MAGICC_WORKER_ROOT_DIR before starting your R session.
 #' @author Mika Pflüger
 #' @importFrom reticulate import
 #' @examples
