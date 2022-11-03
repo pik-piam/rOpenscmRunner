@@ -2,7 +2,7 @@
 
 R package **rOpenscmRunner**, version **0.3.1**
 
-[![CRAN status](https://www.r-pkg.org/badges/version/rOpenscmRunner)](https://cran.r-project.org/package=rOpenscmRunner)  [![R build status](https://github.com/pik-piam/rOpenscmRunner/workflows/check/badge.svg)](https://github.com/pik-piam/rOpenscmRunner/actions) [![codecov](https://codecov.io/gh/pik-piam/rOpenscmRunner/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/rOpenscmRunner) 
+[![CRAN status](https://www.r-pkg.org/badges/version/rOpenscmRunner)](https://cran.r-project.org/package=rOpenscmRunner)  [![R build status](https://github.com/pik-piam/rOpenscmRunner/workflows/check/badge.svg)](https://github.com/pik-piam/rOpenscmRunner/actions) [![codecov](https://codecov.io/gh/pik-piam/rOpenscmRunner/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/rOpenscmRunner) [![r-universe](https://pik-piam.r-universe.dev/badges/rOpenscmRunner)](https://pik-piam.r-universe.dev/ui#builds)
 
 ## Purpose and Functionality
 
