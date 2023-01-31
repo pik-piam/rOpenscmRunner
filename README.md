@@ -1,8 +1,8 @@
 # Run different simple climate models from R using a unified interface
 
-R package **rOpenscmRunner**, version **0.3.2**
+R package **rOpenscmRunner**, version **0.3.3**
 
-[![CRAN status](https://www.r-pkg.org/badges/version/rOpenscmRunner)](https://cran.r-project.org/package=rOpenscmRunner)  [![R build status](https://github.com/pik-piam/rOpenscmRunner/workflows/check/badge.svg)](https://github.com/pik-piam/rOpenscmRunner/actions) [![codecov](https://codecov.io/gh/pik-piam/rOpenscmRunner/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/rOpenscmRunner) [![r-universe](https://pik-piam.r-universe.dev/badges/rOpenscmRunner)](https://pik-piam.r-universe.dev/ui#builds)
+[![CRAN status](https://www.r-pkg.org/badges/version/rOpenscmRunner)](https://cran.r-project.org/package=rOpenscmRunner)  [![R build status](https://github.com/pik-piam/rOpenscmRunner/workflows/check/badge.svg)](https://github.com/pik-piam/rOpenscmRunner/actions) [![codecov](https://codecov.io/gh/pik-piam/rOpenscmRunner/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/rOpenscmRunner) [![r-universe](https://pik-piam.r-universe.dev/badges/rOpenscmRunner)](https://pik-piam.r-universe.dev/builds)
 
 ## Purpose and Functionality
 
@@ -46,7 +46,7 @@ In case of questions / problems please contact Mika Pflüger <mika.pflueger@pik-
 
 To cite package **rOpenscmRunner** in publications use:
 
-Pflüger M (2022). _rOpenscmRunner: Run different simple climate models from R using a unified interface_. R package version 0.3.2, <https://github.com/pik-piam/rOpenscmRunner>.
+Pflüger M (2023). _rOpenscmRunner: Run different simple climate models from R using a unified interface_. R package version 0.3.3, <https://github.com/pik-piam/rOpenscmRunner>.
 
 A BibTeX entry for LaTeX users is
 
@@ -54,8 +54,8 @@ A BibTeX entry for LaTeX users is
 @Manual{,
   title = {rOpenscmRunner: Run different simple climate models from R using a unified interface},
   author = {Mika Pflüger},
-  year = {2022},
-  note = {R package version 0.3.2},
+  year = {2023},
+  note = {R package version 0.3.3},
   url = {https://github.com/pik-piam/rOpenscmRunner},
 }
 ```

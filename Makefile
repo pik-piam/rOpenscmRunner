@@ -1,9 +1,15 @@
-.PHONY: help
+.PHONY: help build check test lint lint-all format format-all install docs
 .DEFAULT_GOAL = help
 
+# extracts the help text and formats it nicely
+HELP_PARSING = 'm <- readLines("Makefile");\
+				m <- grep("\#\#", m, value=TRUE);\
+				command <- sub("^([^ ]*) *\#\#(.*)", "\\1", m);\
+				help <- sub("^([^ ]*) *\#\#(.*)", "\\2", m);\
+				cat(sprintf("%-8s%s", command, help), sep="\n")'
+
 help:           ## Show this help.
-	@sed -e '/##/ !d' -e '/sed/ d' -e 's/^\([^ ]*\) *##\(.*\)/\1^\2/' \
-		$(MAKEFILE_LIST) | column -ts '^'
+	@Rscript -e $(HELP_PARSING)
 
 build:          ## Build the package using lucode2::buildLibrary()
 	Rscript -e 'lucode2::buildLibrary()'
@@ -16,7 +22,22 @@ test:           ## Run testthat tests
 	Rscript -e 'devtools::test(show_report = TRUE)'
 
 lint:           ## Check if code etiquette is followed using lucode2::lint()
+                ## Only checks files you changed.
 	Rscript -e 'lucode2::lint()'
+
+lint-all:       ## Check if code etiquette is followed using lucode2::lint()
+                ## Checks all files.
+	Rscript -e 'lucode2::lint(".")'
 
 format:         ## Apply auto-formatting to changed files and lint afterwards
 	Rscript -e 'lucode2::autoFormat()'
+
+format-all:     ## Apply auto-formatting to all files and lint afterwards
+	Rscript -e 'lucode2::autoFormat(files=list.files("./R", full.names = TRUE, pattern = "\\.R"))'
+
+install:        ## Install the package locally via devtools::install()
+	Rscript -e 'devtools::install(upgrade = "never")'
+
+docs:           ## Generate the package documentation (man/*.Rd files) via roxygen2::roxygenize(),
+                ## view the generated documentation with `?package::function`
+	Rscript -e 'roxygen2::roxygenize()'
